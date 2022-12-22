@@ -35,7 +35,7 @@ jobs:
         run: dotnet build ./src --configuration Release
         
       - name: Test
-        run: dotnet test ./src --no-build --verbosity normal
+        run: dotnet test ./src --no-build --verbosity normal --configuration Release
 
       # Run analyzers
       - name: Run Microsoft Security DevOps Analysis
