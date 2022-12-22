@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
-namespace Whetstone.CameraMonitor.Test
+namespace Whetstone.SecurityCamera.Test
 {
     internal sealed class XUnitLoggerProvider : ILoggerProvider
     {

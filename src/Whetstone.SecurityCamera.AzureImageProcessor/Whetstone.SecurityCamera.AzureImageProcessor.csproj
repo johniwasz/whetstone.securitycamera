@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Whetstone.CameraMonitor\Whetstone.CameraMonitor.csproj" />
+    <ProjectReference Include="..\Whetstone.SecurityCamera\Whetstone.SecurityCamera.csproj" />
   </ItemGroup>
 
 </Project>

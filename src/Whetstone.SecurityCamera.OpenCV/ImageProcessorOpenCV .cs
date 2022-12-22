@@ -3,7 +3,7 @@ using static OpenCvSharp.Stitcher;
 using System.IO;
 using OpenCvSharp.Internal;
 
-namespace Whetstone.CameraMonitor.OpenCV
+namespace Whetstone.SecurityCamera.OpenCV
 {
     public class ImageProcessorOpenCV : IImageProcessor
     {

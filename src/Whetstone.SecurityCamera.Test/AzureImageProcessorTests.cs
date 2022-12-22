@@ -1,11 +1,11 @@
 using Microsoft.Extensions.Configuration;
 using Xunit.Abstractions;
-using Whetstone.CameraMonitor.AzureImageProcessor;
+using Whetstone.SecurityCamera.AzureImageProcessor;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using Microsoft.Azure.CognitiveServices.Vision.ComputerVision.Models;
 
-namespace Whetstone.CameraMonitor.Test
+namespace Whetstone.SecurityCamera.Test
 {
     public class AzureImageProcessorTests
     {

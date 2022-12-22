@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Whetstone.CameraMonitor.Test
+namespace Whetstone.SecurityCamera.Test
 {
 
     public class TestFixture

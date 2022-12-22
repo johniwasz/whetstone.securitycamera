@@ -1,6 +1,6 @@
-using Whetstone.CameraMonitor;
-using Whetstone.CameraMonitor.AzureImageProcessor;
-using Whetstone.CameraMonitor.Service;
+using Whetstone.SecurityCamera;
+using Whetstone.SecurityCamera.AzureImageProcessor;
+using Whetstone.SecurityCamera.Service;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>

@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Net;
 
 
-namespace Whetstone.CameraMonitor.AzureImageProcessor
+namespace Whetstone.SecurityCamera.AzureImageProcessor
 {
     public class VisionProcessor : IImageProcessor
     {

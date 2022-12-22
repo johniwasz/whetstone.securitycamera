@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Whetstone.CameraMonitor.AzureImageProcessor;
-using Whetstone.CameraMonitor.OpenCV;
+using Whetstone.SecurityCamera.AzureImageProcessor;
+using Whetstone.SecurityCamera.OpenCV;
 using Xunit.Abstractions;
 
-namespace Whetstone.CameraMonitor.Test
+namespace Whetstone.SecurityCamera.Test
 {
     public class OpenCVImageProcessorTests
     {

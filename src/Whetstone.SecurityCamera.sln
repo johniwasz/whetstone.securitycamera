@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.CameraMonitor.Service", "Whetstone.CameraMonitor.Service\Whetstone.CameraMonitor.Service.csproj", "{AD779BC8-9CE4-4F32-BE25-3EDAFAD21F8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.SecurityCamera", "Whetstone.SecurityCamera\Whetstone.SecurityCamera.csproj", "{32121D9F-778F-4FED-9071-52158C6E9CDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.CameraMonitor", "Whetstone.CameraMonitor\Whetstone.CameraMonitor.csproj", "{5D1C2C49-D194-4036-938F-E2500D6D5AF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.SecurityCamera.AzureImageProcessor", "Whetstone.SecurityCamera.AzureImageProcessor\Whetstone.SecurityCamera.AzureImageProcessor.csproj", "{64F26415-1C72-401A-A993-08684A90BB09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.CameraMonitor.AzureImageProcessor", "Whetstone.CameraMonitor.AzureImageProcessor\Whetstone.CameraMonitor.AzureImageProcessor.csproj", "{9BE9C57A-A0D6-487F-B0D8-5B1306737BCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.SecurityCamera.OpenCV", "Whetstone.SecurityCamera.OpenCV\Whetstone.SecurityCamera.OpenCV.csproj", "{55F93562-0CD9-4DA6-8F04-DF7CDB5C98E7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.CameraMonitor.Test", "Whetstone.CameraMonitor.Test\Whetstone.CameraMonitor.Test.csproj", "{95994929-8145-443A-94DF-4E18D8F6F14B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.SecurityCamera.Service", "Whetstone.SecurityCamera.Service\Whetstone.SecurityCamera.Service.csproj", "{CDFF53DA-9B9A-46FF-B243-CC221A9BF644}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whetstone.CameraMonitor.OpenCV", "Whetstone.CameraMonitor.OpenCV\Whetstone.CameraMonitor.OpenCV.csproj", "{C3F92205-C85D-48B8-AB09-46A46E2FFF6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.SecurityCamera.Test", "Whetstone.SecurityCamera.Test\Whetstone.SecurityCamera.Test.csproj", "{6A7DE58C-5F52-47A1-95C2-2D14D81C87A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Whetstone.CameraMonitor.Trainer", "Whetstone.CameraMonitor.Trainer\Whetstone.CameraMonitor.Trainer.csproj", "{EA572422-1A0D-4D6C-8931-93CA7FF2BBB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whetstone.SecurityCamera.Trainer", "Whetstone.SecurityCamera.Trainer\Whetstone.SecurityCamera.Trainer.csproj", "{F55A208A-C902-41E2-BC95-816645B19E97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,30 +21,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AD779BC8-9CE4-4F32-BE25-3EDAFAD21F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD779BC8-9CE4-4F32-BE25-3EDAFAD21F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD779BC8-9CE4-4F32-BE25-3EDAFAD21F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD779BC8-9CE4-4F32-BE25-3EDAFAD21F8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D1C2C49-D194-4036-938F-E2500D6D5AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D1C2C49-D194-4036-938F-E2500D6D5AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D1C2C49-D194-4036-938F-E2500D6D5AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D1C2C49-D194-4036-938F-E2500D6D5AF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9BE9C57A-A0D6-487F-B0D8-5B1306737BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BE9C57A-A0D6-487F-B0D8-5B1306737BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BE9C57A-A0D6-487F-B0D8-5B1306737BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BE9C57A-A0D6-487F-B0D8-5B1306737BCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95994929-8145-443A-94DF-4E18D8F6F14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95994929-8145-443A-94DF-4E18D8F6F14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95994929-8145-443A-94DF-4E18D8F6F14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95994929-8145-443A-94DF-4E18D8F6F14B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3F92205-C85D-48B8-AB09-46A46E2FFF6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3F92205-C85D-48B8-AB09-46A46E2FFF6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3F92205-C85D-48B8-AB09-46A46E2FFF6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3F92205-C85D-48B8-AB09-46A46E2FFF6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA572422-1A0D-4D6C-8931-93CA7FF2BBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA572422-1A0D-4D6C-8931-93CA7FF2BBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA572422-1A0D-4D6C-8931-93CA7FF2BBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA572422-1A0D-4D6C-8931-93CA7FF2BBB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32121D9F-778F-4FED-9071-52158C6E9CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32121D9F-778F-4FED-9071-52158C6E9CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32121D9F-778F-4FED-9071-52158C6E9CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32121D9F-778F-4FED-9071-52158C6E9CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64F26415-1C72-401A-A993-08684A90BB09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64F26415-1C72-401A-A993-08684A90BB09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64F26415-1C72-401A-A993-08684A90BB09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64F26415-1C72-401A-A993-08684A90BB09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F93562-0CD9-4DA6-8F04-DF7CDB5C98E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F93562-0CD9-4DA6-8F04-DF7CDB5C98E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F93562-0CD9-4DA6-8F04-DF7CDB5C98E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F93562-0CD9-4DA6-8F04-DF7CDB5C98E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFF53DA-9B9A-46FF-B243-CC221A9BF644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFF53DA-9B9A-46FF-B243-CC221A9BF644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFF53DA-9B9A-46FF-B243-CC221A9BF644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFF53DA-9B9A-46FF-B243-CC221A9BF644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A7DE58C-5F52-47A1-95C2-2D14D81C87A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7DE58C-5F52-47A1-95C2-2D14D81C87A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7DE58C-5F52-47A1-95C2-2D14D81C87A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7DE58C-5F52-47A1-95C2-2D14D81C87A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55A208A-C902-41E2-BC95-816645B19E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55A208A-C902-41E2-BC95-816645B19E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55A208A-C902-41E2-BC95-816645B19E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55A208A-C902-41E2-BC95-816645B19E97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

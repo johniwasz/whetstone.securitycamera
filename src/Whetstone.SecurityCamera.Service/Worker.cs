@@ -1,4 +1,4 @@
-namespace Whetstone.CameraMonitor.Service
+namespace Whetstone.SecurityCamera.Service
 {
     public class Worker : BackgroundService
     {

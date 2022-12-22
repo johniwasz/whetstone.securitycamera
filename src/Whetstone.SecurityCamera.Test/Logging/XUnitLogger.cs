@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
 
-namespace Whetstone.CameraMonitor.Test
+namespace Whetstone.SecurityCamera.Test
 {
     internal class XUnitLogger : ILogger
     {

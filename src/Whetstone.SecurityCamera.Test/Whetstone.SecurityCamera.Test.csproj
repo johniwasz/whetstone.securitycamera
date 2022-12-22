@@ -52,8 +52,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Whetstone.CameraMonitor.AzureImageProcessor\Whetstone.CameraMonitor.AzureImageProcessor.csproj" />
-    <ProjectReference Include="..\Whetstone.CameraMonitor.OpenCV\Whetstone.CameraMonitor.OpenCV.csproj" />
+    <ProjectReference Include="..\Whetstone.SecurityCamera.AzureImageProcessor\Whetstone.SecurityCamera.AzureImageProcessor.csproj" />
+    <ProjectReference Include="..\Whetstone.SecurityCamera.OpenCV\Whetstone.SecurityCamera.OpenCV.csproj" />
+    <ProjectReference Include="..\Whetstone.SecurityCamera\Whetstone.SecurityCamera.csproj" />
   </ItemGroup>
 
 </Project>
