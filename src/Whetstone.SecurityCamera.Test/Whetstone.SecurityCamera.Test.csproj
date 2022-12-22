@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <None Remove="00000455_026.jpg" />
-    <None Remove="appsettings.Development.json" />
     <None Remove="appsettings.json" />
     <None Remove="Data\ImageModels\haarcascade_frontalcatface.xml" />
   </ItemGroup>
@@ -18,11 +17,6 @@
   <ItemGroup>
     <Content Include="00000455_026.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="appsettings.Development.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -14,7 +14,7 @@ IHost host = Host.CreateDefaultBuilder(args)
 
         configBuilder
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            .AddJsonFile($"appsettings.{environmentName}.json", true)
+         //   .AddJsonFile($"appsettings.{environmentName}.json", true)
             .AddEnvironmentVariables();
     })
     .Build();

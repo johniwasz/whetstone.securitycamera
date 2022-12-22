@@ -15,6 +15,8 @@ on:
       
 env:
   GDN_BINSKIM_TARGET: './src/Whetstone.SecurityCamera.Service/bin/Release'
+  AZURE_VISIONSUBSCRIPTIONKEY: ${{ secrets.AZURE_VISIONSUBSCRIPTIONKEY }}
+  AZURE_VISIONENDPOINT: ${{ secrets.AZURE_VISIONENDPOINT }}
 
 jobs:
   setup-version:
@@ -22,15 +24,18 @@ jobs:
     strategy:
       fail-fast: false
     steps:
+
+      - name: List Environment Variables
+        run: env
+
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: setup-dotnet
         uses: xt0rted/setup-dotnet@v1.5.0
         with:
           dotnet-version: '7.0'
-      - name: Check installed version
-        shell: pwsh
-        run: $version = & dotnet --version
+
       - name: Build with dotnet
         run: dotnet build ./src --configuration Release
         

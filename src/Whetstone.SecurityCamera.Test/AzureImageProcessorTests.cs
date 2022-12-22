@@ -32,8 +32,15 @@ namespace Whetstone.SecurityCamera.Test
 
             using (FileStream fs = File.Open(IMAGE_FILE, FileMode.Open, FileAccess.Read))
             {
-                bool isMatched = await azureProcessor.GetTagsAsync(fs, matchList);
-                Assert.True(isMatched);
+                try
+                {
+                    bool isMatched = await azureProcessor.GetTagsAsync(fs, matchList);
+                    Assert.True(isMatched);
+                }
+                finally
+                {
+                    fs.Close();
+                }
             }
         }
 
@@ -55,8 +62,15 @@ namespace Whetstone.SecurityCamera.Test
 
             using (FileStream fs = File.Open(IMAGE_FILE, FileMode.Open, FileAccess.Read))
             {
-                bool isMatched = await azureProcessor.GetTagsAsync(fs, matchList);
-                Assert.False(isMatched);
+                try
+                {
+                    bool isMatched = await azureProcessor.GetTagsAsync(fs, matchList);
+                    Assert.False(isMatched);
+                }
+                finally
+                {
+                    fs.Close();
+                }
             }
         }
 
@@ -81,8 +95,14 @@ namespace Whetstone.SecurityCamera.Test
 
             using (FileStream fs = File.Open(IMAGE_FILE, FileMode.Open, FileAccess.Read))
             {
-                await Assert.ThrowsAsync<ComputerVisionErrorResponseException>(async () => await azureProcessor.GetTagsAsync(fs, matchList));
-
+                try
+                {
+                    await Assert.ThrowsAsync<ComputerVisionErrorResponseException>(async () => await azureProcessor.GetTagsAsync(fs, matchList));
+                }
+                finally
+                {
+                    fs.Close();
+                }
                 
             }
         }

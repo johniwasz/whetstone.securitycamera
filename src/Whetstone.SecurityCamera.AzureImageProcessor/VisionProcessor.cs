@@ -13,6 +13,9 @@ namespace Whetstone.SecurityCamera.AzureImageProcessor
         public const string CONFIG_SUBSCRIPTION_KEY = "VisionSubscriptionKey";
         public const string CONFIG_VISION_ENDPOINT = "VisionEndpoint";
 
+        public const string ENV_SUBSCRIPTION_KEY = "AZURE_VISIONSUBSCRIPTIONKEY";
+        public const string ENV_VISION_ENDPOINT = "AZURE_VISIONENDPOINT";
+
         private readonly ComputerVisionClient _visionClient;
         
         public VisionProcessor(IConfiguration config)
@@ -21,13 +24,24 @@ namespace Whetstone.SecurityCamera.AzureImageProcessor
             string subscriptionKey = config[CONFIG_SUBSCRIPTION_KEY];
             if(string.IsNullOrWhiteSpace(subscriptionKey) ) 
             {
-                throw new ArgumentException("Configuration cannot be null or empty", CONFIG_SUBSCRIPTION_KEY);
+                subscriptionKey = config[ENV_SUBSCRIPTION_KEY];
+
+                if (string.IsNullOrWhiteSpace(subscriptionKey))
+                {
+                    throw new ArgumentException("Configuration cannot be null or empty", CONFIG_SUBSCRIPTION_KEY);
+                }
             }
 
             string visionEndpoint = config[CONFIG_VISION_ENDPOINT];
-            if(string.IsNullOrEmpty(visionEndpoint) ) 
+            if (string.IsNullOrEmpty(visionEndpoint))
             {
-                throw new ArgumentException("Configuration be null or empty", CONFIG_VISION_ENDPOINT);
+                visionEndpoint = config[ENV_VISION_ENDPOINT];
+
+                if (string.IsNullOrEmpty(visionEndpoint))
+                {
+
+                    throw new ArgumentException("Configuration be null or empty", CONFIG_VISION_ENDPOINT);
+                }
             }
 
             if (!Uri.TryCreate(visionEndpoint, new UriCreationOptions(), out Uri? visionUri))

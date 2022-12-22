@@ -20,8 +20,8 @@ namespace Whetstone.SecurityCamera.Test
             _output = output;
         }
 
-        [Fact]
-        public async Task AzureTestMatchIsGood()
+        //[Fact]
+        public async Task OpenCVTestMatchIsGood()
         {
             IConfiguration config = TestFixture.InitConfiguration();
 
