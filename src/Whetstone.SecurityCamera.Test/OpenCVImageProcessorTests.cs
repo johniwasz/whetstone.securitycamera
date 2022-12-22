@@ -32,7 +32,7 @@ namespace Whetstone.SecurityCamera.Test
                 new KeyValuePair<string, double>("cat", 0.8)
             };
 
-            using (FileStream fs = File.Open("00000455_026.jpg", FileMode.Open))
+            using (FileStream fs = File.Open("00000455_026.jpg", FileMode.Open, FileAccess.Read))
             {
                 bool isMatched = await azureProcessor.GetTagsAsync(fs, matchList);
                 Assert.True(isMatched);

@@ -11,6 +11,8 @@ namespace Whetstone.SecurityCamera.Test
     {
         private readonly ITestOutputHelper _output;
 
+        private const string IMAGE_FILE = "00000455_026.jpg";
+
         public AzureImageProcessorTests(ITestOutputHelper output)
         {
             _output = output;
@@ -28,11 +30,11 @@ namespace Whetstone.SecurityCamera.Test
                 new KeyValuePair<string, double>("cat", 0.8)
             };
 
-            using (FileStream fs = File.Open("00000455_026.jpg", FileMode.Open))
+            using (FileStream fs = File.Open(IMAGE_FILE, FileMode.Open, FileAccess.Read))
             {
                 bool isMatched = await azureProcessor.GetTagsAsync(fs, matchList);
                 Assert.True(isMatched);
-            }            
+            }
         }
 
         [Fact]
@@ -51,7 +53,7 @@ namespace Whetstone.SecurityCamera.Test
                 new KeyValuePair<string, double>("dog", 0.8)
             };
 
-            using (FileStream fs = File.Open("00000455_026.jpg", FileMode.Open))
+            using (FileStream fs = File.Open(IMAGE_FILE, FileMode.Open, FileAccess.Read))
             {
                 bool isMatched = await azureProcessor.GetTagsAsync(fs, matchList);
                 Assert.False(isMatched);
@@ -77,7 +79,7 @@ namespace Whetstone.SecurityCamera.Test
                 new KeyValuePair<string, double>("cat", 0.8)
             };
 
-            using (FileStream fs = File.Open("00000455_026.jpg", FileMode.Open))
+            using (FileStream fs = File.Open(IMAGE_FILE, FileMode.Open, FileAccess.Read))
             {
                 await Assert.ThrowsAsync<ComputerVisionErrorResponseException>(async () => await azureProcessor.GetTagsAsync(fs, matchList));
 
