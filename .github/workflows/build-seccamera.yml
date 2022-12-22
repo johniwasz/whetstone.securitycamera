@@ -4,12 +4,17 @@ on:
   pull_request:
     paths-ignore:
       - '**.md'
+    branches: ["main"]
+    
   push:
     branches:
       - main
       - releases/*
     paths-ignore:
       - '**.md'
+      
+env:
+  GDN_BINSKIM_TARGET: './src/Whetstone.SecurityCamera.Service/bin/Release'
 
 jobs:
   setup-version:
@@ -19,16 +24,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Clear toolcache
-        shell: pwsh
-        run: __tests__/clear-toolcache.ps1 ${{ runner.os }}
-      - name: Setup dotnet 7.0
-        uses: ./
+      - name: setup-dotnet
+        uses: xt0rted/setup-dotnet@v1.5.0
         with:
           dotnet-version: '7.0'
       - name: Check installed version
         shell: pwsh
-        run: |
-          $version = & dotnet --version
-          Write-Host "Installed version: $version"
-          if (-not $version.StartsWith("${{ matrix.dotnet-version }}")) { throw "Unexpected version" }
+        run: $version = & dotnet --version
+      - name: Build with dotnet
+        run: dotnet build ./src --configuration Release
+        
+      - name: Test
+        run: dotnet test ./src --no-build --verbosity normal --configuration Release
+
+      # Run analyzers
+      - name: Run Microsoft Security DevOps Analysis
+        uses: microsoft/security-devops-action@preview
+        id: msdo
+        
+      # Upload alerts to the Security tab
+      - name: Upload alerts to Security tab
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: ${{ steps.msdo.outputs.sarifFile }}      
