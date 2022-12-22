@@ -12,6 +12,9 @@ on:
       - releases/*
     paths-ignore:
       - '**.md'
+      
+env:
+  GDN_BINSKIM_TARGET: './src/Whetstone.SecurityCamera.Service/bin/Release'
 
 jobs:
   setup-version:
