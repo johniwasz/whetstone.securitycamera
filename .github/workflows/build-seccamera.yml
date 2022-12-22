@@ -12,17 +12,28 @@ on:
       - releases/*
     paths-ignore:
       - '**.md'
-      
+
+  schedule:
+    - cron: '0 1 * * *'
+
 env:
-  GDN_BINSKIM_TARGET: "./src/Whetstone.SecurityCamera.Service/bin/Release/*.dll"
+  GDN_BINSKIM_TARGET: "./src/Whetstone.SecurityCamera.Service/bin/Release/net7.0/*.dll"
   AZURE_VISIONSUBSCRIPTIONKEY: ${{ secrets.AZURE_VISIONSUBSCRIPTIONKEY }}
   AZURE_VISIONENDPOINT: ${{ secrets.AZURE_VISIONENDPOINT }}
 
 jobs:
   setup-version:
     runs-on: 'windows-latest'
+.   permissions:
+      actions: read
+      contents: read
+      security-events: write
+
     strategy:
       fail-fast: false
+      matrix:
+        language: [ 'csharp' ]
+
     steps:
 
       - name: List Environment Variables
@@ -31,13 +42,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+
       - name: setup-dotnet
         uses: xt0rted/setup-dotnet@v1.5.0
         with:
           dotnet-version: '7.0'
 
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-and-quality
+
       - name: Build with dotnet
         run: dotnet build ./src --configuration Release
+    
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: "/language:${{matrix.language}}"
         
       - name: Test
         run: dotnet test ./src --no-build --verbosity normal --configuration Release
