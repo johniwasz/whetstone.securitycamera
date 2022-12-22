@@ -24,7 +24,7 @@ env:
 jobs:
   setup-version:
     runs-on: 'windows-latest'
-.   permissions:
+    permissions:
       actions: read
       contents: read
       security-events: write
