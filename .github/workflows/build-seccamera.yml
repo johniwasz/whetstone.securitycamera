@@ -14,7 +14,7 @@ on:
       - '**.md'
       
 env:
-  GDN_BINSKIM_TARGET: './src/Whetstone.SecurityCamera.Service/bin/Release'
+  GDN_BINSKIM_TARGET: "./src/Whetstone.SecurityCamera.Service/bin/Release/*.dll"
   AZURE_VISIONSUBSCRIPTIONKEY: ${{ secrets.AZURE_VISIONSUBSCRIPTIONKEY }}
   AZURE_VISIONENDPOINT: ${{ secrets.AZURE_VISIONENDPOINT }}
 
