@@ -30,6 +30,9 @@ jobs:
         run: $version = & dotnet --version
       - name: Build with dotnet
         run: dotnet build ./src --configuration Release
+        
+      - name: Test
+        run: dotnet test ./src --no-build --verbosity normal
 
       # Run analyzers
       - name: Run Microsoft Security DevOps Analysis
