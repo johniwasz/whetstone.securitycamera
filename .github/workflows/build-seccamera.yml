@@ -25,7 +25,8 @@ jobs:
           dotnet-version: '7.0'
       - name: Check installed version
         shell: pwsh
-        run: |
-          $version = & dotnet --version
-          Write-Host "Installed version: $version"
-          if (-not $version.StartsWith("${{ matrix.dotnet-version }}")) { throw "Unexpected version" }
+        run: $version = & dotnet --version
+      - name: Build with dotnet
+        run: dotnet build ./src --configuration Release
+
+      
